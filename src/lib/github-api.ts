@@ -20,7 +20,7 @@ const octokit = new Octokit({ auth: import.meta.env.VITE_GITHUB_TOKEN });
 export async function fetchUserContributions(username: string): Promise<ContributionsObject> {
 	const oneYearAgo = new Date();
 	oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-	oneYearAgo.setDate(oneYearAgo.getDate() - 4);
+	oneYearAgo.setDate(oneYearAgo.getDate() - 5);
 
 	const fromDate = oneYearAgo.toISOString();
 
