@@ -83,10 +83,10 @@
 		<p class="text-red-500">Error: {error}</p>
 	{:else}
 		<div
-			class="relative py-6 px-6 bg-background/20 backdrop-blur-md backdrop-filter border rounded-lg"
+			class="relative py-6 px-6 bg-background/20 backdrop-blur-md backdrop-filter border border-black dark:border-white rounded-[2px]"
 		>
 			<div
-				class="absolute -top-4 bg-background inline-flex items-center px-2 py-1.5 rounded font-medium tracking-wide leading-none text-black dark:text-white !border"
+				class="absolute -top-4 bg-background inline-flex items-center px-2 py-1.5 rounded-[2px] font-medium tracking-wide leading-none text-black dark:text-white !border border-black dark:border-white"
 			>
 				{totalContributions} contributions in the last year
 			</div>
@@ -104,7 +104,9 @@
 								{#each week as contribution}
 									{#if contribution}
 										<div
-											class="w-4 h-4 rounded-[2px] {getColor(contribution.count)} border mb-1"
+											class="w-4 h-4 rounded-[1px] {getColor(
+												contribution.count
+											)} border border-black/20 dark:border-white/10 mb-1"
 											title="{contribution.count} contributions on {formatDate(contribution.date)}"
 										>
 											<span class="sr-only"
@@ -120,15 +122,27 @@
 					</div>
 				</div>
 			</div>
-			<div class="absolute -bottom-4 right-6 !border bg-background px-2 py-1.5 rounded">
+			<div
+				class="absolute -bottom-4 right-6 !border border-black dark:border-white bg-background px-2 py-1.5 rounded-[2px]"
+			>
 				<div class="flex justify-end items-center text-sm text-gray-600">
 					<span class="mr-2 dark:text-gray-300">Less</span>
 					<div class="flex gap-1">
-						<div class="w-4 h-4 bg-gray-100 dark:bg-gray-800"></div>
-						<div class="w-4 h-4 bg-sky-200 dark:bg-sky-800"></div>
-						<div class="w-4 h-4 bg-sky-300 dark:bg-sky-700"></div>
-						<div class="w-4 h-4 bg-sky-400 dark:bg-sky-600"></div>
-						<div class="w-4 h-4 bg-sky-500"></div>
+						<div
+							class="w-4 h-4 border border-black/20 dark:border-white/10 rounded-[1px] bg-gray-100 dark:bg-gray-800"
+						></div>
+						<div
+							class="w-4 h-4 border border-black/20 dark:border-white/10 rounded-[1px] bg-sky-200 dark:bg-sky-800"
+						></div>
+						<div
+							class="w-4 h-4 border border-black/20 dark:border-white/10 rounded-[1px] bg-sky-300 dark:bg-sky-700"
+						></div>
+						<div
+							class="w-4 h-4 border border-black/20 dark:border-white/10 rounded-[1px] bg-sky-400 dark:bg-sky-600"
+						></div>
+						<div
+							class="w-4 h-4 border border-black/20 dark:border-white/10 rounded-[1px] bg-sky-500"
+						></div>
 					</div>
 					<span class="ml-2 dark:text-gray-300">More</span>
 				</div>

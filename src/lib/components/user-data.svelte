@@ -10,7 +10,7 @@
 	<div class="">
 		<img
 			src={user.avatar_url}
-			class="h-80 w-80 mx-auto object-cover rounded-full border-2"
+			class="h-72 w-72 mx-auto object-cover rounded-[2px] border-2"
 			alt={`${user.login} avatar`}
 			aria-label={`${user.login} avatar`}
 		/>
@@ -62,11 +62,13 @@
 				<h2 class="text-lg tracking-wide font-bold">Organizations</h2>
 				<div class="flex flex-wrap items-center gap-1">
 					{#each orgs as org}
-						<div class="inline-flex items-center border px-2 py-1.5 rounded bg-background">
+						<div
+							class="inline-flex items-center border border-black dark:border-white px-2 py-1.5 rounded-[2px] bg-background"
+						>
 							<img
 								src={org.avatar_url}
 								alt={`${org.login} organization avatar`}
-								class="h-6 w-6 rounded object-cover mr-2"
+								class="h-6 w-6 rounded-[2px] object-cover mr-2"
 								aria-label={`${org.login} organization avatar`}
 							/>
 							<span class="text-base tracking-wide">{org.login}</span>

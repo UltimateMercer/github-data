@@ -108,10 +108,10 @@
 
 <main class="container mx-auto flex flex-col gap-6 px-5 sm:px-6 lg:px-8 py-8">
 	<div
-		class="relative !border rounded-lg shadow-lg transition-all bg-background/20 backdrop-blur-md backdrop-filter hover:shadow pt-6 px-5 pb-6 mb-2"
+		class="relative !border border-black dark:border-white rounded-[2px] transition-all bg-background/20 backdrop-blur-md backdrop-filter pt-6 px-5 pb-6 mb-2"
 	>
 		<div
-			class="absolute -top-4 bg-background inline-flex items-center px-2 py-1.5 rounded font-medium tracking-wide leading-none text-black dark:text-white !border"
+			class="absolute -top-4 bg-background inline-flex items-center px-2 py-1.5 rounded-[2px] font-medium tracking-wide leading-none text-black dark:text-white !border border-black dark:border-white"
 		>
 			Insert here a Github username
 		</div>
@@ -120,6 +120,7 @@
 			placeholder="e.g. UltimateMercer"
 			on:keyup={(event) => debounce((event.target as HTMLInputElement).value)}
 			value={input}
+			class="rounded-[2px] border-black dark:border-white"
 		/>
 		<p class="text-muted-foreground text-sm mt-1">
 			The username must be between 1 and 39 characters. Can only contain letters, numbers, and
@@ -128,10 +129,10 @@
 	</div>
 
 	<div
-		class="group relative !border rounded-lg shadow-lg transition-all min-h-[120px] flex flex-col gap-4 bg-background/20 backdrop-blur-md backdrop-filter hover:shadow pt-6 px-5 pb-8 mb-2"
+		class="group relative !border border-black dark:border-white rounded-[2px] shadow-lg transition-all min-h-[120px] flex flex-col gap-4 bg-background/20 backdrop-blur-md backdrop-filter hover:shadow pt-6 px-5 pb-8 mb-2"
 	>
 		<div
-			class="absolute -top-4 bg-background inline-flex items-center px-2 py-1.5 rounded font-medium tracking-wide leading-none text-black dark:text-white !border"
+			class="absolute -top-4 bg-background inline-flex items-center px-2 py-1.5 rounded-[2px] font-medium tracking-wide leading-none text-black dark:text-white !border border-black dark:border-white"
 		>
 			{#if $query.isLoading}
 				<svg
@@ -172,10 +173,10 @@
 						totalContributions={$query.data.totalContributions}
 					/>
 					<div
-						class="relative rounded-lg p-6 my-4 transition-shadow duration-300 !border bg-background/20 backdrop-blur-md backdrop-filter"
+						class="relative rounded-[2px] p-6 my-4 transition-shadow duration-300 !border border-black dark:border-white bg-background/20 backdrop-blur-md backdrop-filter"
 					>
 						<div
-							class="absolute -top-4 bg-background inline-flex items-center px-2 py-1.5 rounded font-medium tracking-wide leading-none text-black dark:text-white !border"
+							class="absolute -top-4 bg-background inline-flex items-center px-2 py-1.5 rounded-[2px] font-medium tracking-wide leading-none text-black dark:text-white !border border-black dark:border-white"
 						>
 							<Tooltip.Root>
 								<Tooltip.Trigger>
@@ -190,7 +191,7 @@
 							{#each $query.data.pinnedRepos as pinned}
 								<Button
 									on:click={() => handleDialog(pinned)}
-									class="tracking-wide"
+									class="tracking-wide rounded-[2px] border border-black dark:border-white"
 									aria-label="Open sheet"
 								>
 									<PushPin weight="bold" class="mr-2 h-4 w-4" />
@@ -201,7 +202,7 @@
 								<Button
 									variant="outline"
 									on:click={() => handleDialog(repo)}
-									class="tracking-wide"
+									class="tracking-wide rounded-[2px] border border-black dark:border-white"
 									aria-label="Open sheet"
 								>
 									{repo.full_name}

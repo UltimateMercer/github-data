@@ -20,7 +20,7 @@
 			<Sheet.Description></Sheet.Description>
 		</Sheet.Header>
 		{#if dialogContent.language}
-			<Badge class="mb-2">
+			<Badge class="mb-2 rounded-[2px]">
 				{dialogContent.language}
 			</Badge>
 		{/if}
@@ -66,16 +66,16 @@
 				<span class="flex flex-wrap items-center gap-1 mb-4">
 					<Tags class="w-6 h-6 mr-1" />
 					{#each dialogContent.topics as topic}
-						<Badge variant="outline">{topic}</Badge>
+						<Badge variant="outline" class="rounded-[2px]">{topic}</Badge>
 					{/each}
 				</span>
 			{/if}
 
 			<div class="flex items-center text-lg mb-5">
-				<Avatar.Root>
+				<Avatar.Root class="rounded-[2px]">
 					<Avatar.Image
 						src={dialogContent.owner.avatar_url}
-						class="object-cover"
+						class="object-cover !rounded-[2px]"
 						alt={`@${dialogContent.owner.login}`}
 					/>
 					<Avatar.Fallback>{dialogContent.owner.login}</Avatar.Fallback>
@@ -83,7 +83,11 @@
 				<span class="font-medium ml-2">{dialogContent.owner.login}</span>
 			</div>
 
-			<Button variant="secondary" aria-label="View on Github">
+			<Button
+				variant="secondary"
+				aria-label="View on Github"
+				class="border border-black dark:border-white rounded-[2px]"
+			>
 				<a
 					href={dialogContent.html_url}
 					class="flex items-center"

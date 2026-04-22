@@ -10,10 +10,10 @@
 </script>
 
 <div
-	class="relative rounded-lg p-6 transition-shadow duration-300 !border bg-background/20 backdrop-blur-md backdrop-filter"
+	class="relative rounded-[2px] p-6 transition-shadow duration-300 !border border-black dark:border-white bg-background/20 backdrop-blur-md backdrop-filter"
 >
 	<div
-		class="absolute -top-4 bg-background inline-flex items-center px-2 py-1.5 rounded font-medium tracking-wide leading-none text-black dark:text-white !border"
+		class="absolute -top-4 bg-background inline-flex items-center px-2 py-1.5 rounded-[2px] font-medium tracking-wide leading-none text-black dark:text-white !border border-black dark:border-white"
 	>
 		{repos.length} repositories
 	</div>
